@@ -76,7 +76,9 @@ talkBtn.addEventListener("click", async () => {
 const showResults = async (search) => {
   const url = "https://www.googleapis.com/youtube/v3/search";
 
-  const res = await fetch(`${url}?key=${API_KEY}&part=snippet&q=${search}`);
+  const res = await fetch(
+    `${url}?key=${API_KEY}&part=snippet&q=${search}&maxResults=20`
+  );
 
   const data = await res.json();
 
